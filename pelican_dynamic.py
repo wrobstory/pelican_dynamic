@@ -49,7 +49,8 @@ def copy_resources(src, dest, file_list):
     ------
     Copies files from content to output
     """
-    os.mkdir(dest)
+    if not os.path.exists(dest):
+        os.mkdir(dest)
     for file_ in file_list:
         file_src = os.path.join(src, file_)
         shutil.copy2(file_src, dest)
