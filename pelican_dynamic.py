@@ -3,7 +3,7 @@
 Embedded JS and CSS for Pelican
 ================================
 
-This plug allows you to easily embed JS and CSS in the header of individual
+This plugin allows you to easily embed JS and CSS in the header of individual
 articles. It also allows for single-tag embedding of D3.js.
 """
 import os
