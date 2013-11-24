@@ -112,3 +112,5 @@ So, in the template I use for my blog ([Flasky](https://github.com/fjavieralba/f
     {% endif %}
 </html>
 ```
+
+That's it! Run your standard ```make html``` or ```make publish``` commands and your JSS/CSS will be moved and ref'd in the right places.
