@@ -5,10 +5,11 @@ Pelican dynamic makes it easy to embed custom CSS and JS into individual Pelican
 
 Why?
 ----
-Have you ever wanted to embed a dynamic D3 visualzation in your Pelican blog post? Me too. This makes it easy to do via he metadata tags for each article. 
+Have you ever wanted to embed a dynamic D3 visualzation in your Pelican blog post? Me too. This makes it easy to do via the metadata tags for each article. 
 
 How
 ---
+To install the plugin, [follow the instructions on the Pelican plugin page.](https://github.com/getpelican/pelican-plugins) 
 
 Start by creating  ```js``` and ```css``` folders in your ```content``` folder: 
 ```
@@ -41,7 +42,7 @@ Scripts: d3_vis_1.js, d3_vis_2.js
 Styles: d3_styles.css
 ```
 
-The ```D3:``` tag is a convenience method that will load a minified version of D3. 
+The ```D3:``` tag is a convenience method that will load a minified version of D3. All of the JS and CSS will live in corresponding ```js``` and ```css``` folders in your ```output``` folder. 
 
 Finally, in your base template (likely named ```base.html```), you need to add the following in your ```head``` tags: 
 ```
@@ -53,7 +54,7 @@ Finally, in your base template (likely named ```base.html```), you need to add t
     {% endif %}
 {% endif %}
 ```
-and the following *after* your body tags: 
+and the following *after* your ```body``` tags: 
 ```
 {% if article %}
     {% if article.scripts %}
