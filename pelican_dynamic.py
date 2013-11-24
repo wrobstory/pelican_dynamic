@@ -11,7 +11,7 @@ import shutil
 
 from pelican import signals
 
-d3_min = '<script src="http://d3js.org/d3.v3.js"></script>'
+d3_min = '<script src="http://d3js.org/d3.v3.min.js"></script>'
 
 def format_resource(gen, metastring, formatter):
     """
