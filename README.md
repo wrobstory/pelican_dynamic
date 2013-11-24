@@ -9,9 +9,14 @@ Have you ever wanted to embed a dynamic D3 visualzation in your Pelican blog pos
 
 How
 ---
-To install the plugin, [follow the instructions on the Pelican plugin page.](https://github.com/getpelican/pelican-plugins) 
+To install the plugin, [follow the instructions on the Pelican plugin page.](https://github.com/getpelican/pelican-plugins) My settings look like the following: 
 
-Start by creating  ```js``` and ```css``` folders in your ```content``` folder: 
+```python
+PLUGIN_PATH = 'pelican-plugins'
+PLUGINS = ['pelican_dynamic']
+```
+
+Next, create ```js``` and ```css``` directories in your ```content``` directory: 
 ```
 website/
 ├── content
@@ -114,3 +119,23 @@ So, in the template I use for my blog ([Flasky](https://github.com/fjavieralba/f
 ```
 
 That's it! Run your standard ```make html``` or ```make publish``` commands and your JSS/CSS will be moved and ref'd in the right places.
+
+Using D3 in a Blog Post
+-----------------------
+With Markdown, this is pretty easy. Just add the raw HTML for your chart element in the middle of your markdown text: 
+
+```
+This is going to be a blog post about D3. Here is my chart: 
+
+<div class="d3-chart"></div>
+
+Isn't that a nice looking chart up there?
+```
+
+Then with D3, make sure you're selecting that element: 
+
+```javascript
+var svg = d3.select(".d3-chart").append("svg")
+```
+
+Ensure that your D3 is loaded *after* your body tags (as outlined above) so that it selects an existing element on the page. 
